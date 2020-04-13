@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        <dashboard-component></dashboard-component>
+        @yield('content')
     </div>
 </body>
 </html>

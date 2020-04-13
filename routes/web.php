@@ -14,9 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    if(Auth::user()){
+        return redirect('/home');
+    } else {
+        return redirect('/login');
+    }
+    
 });
 
 Auth::routes();
+Route::get('/logout', function() {
+    Auth::logout();
+    return redirect('/');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');

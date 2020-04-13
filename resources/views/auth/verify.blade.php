@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
+    <div class="mx-auto mt-4">
+        <h1>LvdH Employee Management System</h1>
+    </div>
+</div>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -1980,53 +1980,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    source: String
+    source: String,
+    user: Object
   },
   data: function data() {
     return {
@@ -37710,11 +37667,11 @@ var render = function() {
         "v-footer",
         { staticClass: "white--text", attrs: { app: "", color: "blue-grey" } },
         [
-          _c("span", [_vm._v("Vuetify")]),
+          _c("span", [_vm._v(_vm._s(_vm.user.name))]),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
-          _c("span", [_vm._v("© 2019")])
+          _c("span", [_vm._v("© 2020")])
         ],
         1
       )
