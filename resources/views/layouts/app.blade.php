@@ -23,6 +23,13 @@
 </head>
 <body>
     <div id="app">
+        @guest
+            <div class="row">
+                <div class="mx-auto mt-4">
+                    <h1>LvdH Employee Management System</h1>
+                </div>
+            </div>
+        @endguest
         @yield('content')
     </div>
 </body>
