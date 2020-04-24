@@ -11,7 +11,12 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.browserSync('lvdh.ems');
-
 mix.js('resources/js/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css');
+
+mix.options({
+   hmrOptions: {
+      host: 'lvdh.ems',
+      port: 8080
+   }
+});

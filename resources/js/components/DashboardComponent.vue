@@ -1,66 +1,86 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawerRight" app clipped right>
-      <v-list dense>
-        <v-list-item @click.stop="right = !right">
+    <v-navigation-drawer v-model="drawer" app clipped left>
+      <v-list dense shaped>
+        <v-list-group no-action prepend-icon="mdi-account-circle" value="true">
+          <template v-slot:activator>
+            <v-list-item-content>
+              <v-list-item-title>Admin</v-list-item-title>
+            </v-list-item-content>
+          </template>
+          <v-list-item link>
+            <v-list-item-title>Liel</v-list-item-title>
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+          </v-list-item>
+        </v-list-group>
+        <v-list-item>
           <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
+            <v-icon>mdi-inbox</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>Open Temporary Drawer</v-list-item-title>
-          </v-list-item-content>
+            <v-list-item-title>Messages</v-list-item-title>
+          </v-list-item-content> 
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-account-box-multiple</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Employees Manifest</v-list-item-title>
+          </v-list-item-content> 
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-alert-circle</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Rules and Regulations</v-list-item-title>
+          </v-list-item-content> 
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-clipboard-account-outline</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Human Resources</v-list-item-title>
+          </v-list-item-content> 
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-file</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Additional Forms</v-list-item-title>
+          </v-list-item-content> 
+        </v-list-item>
+        <v-list-item>
+          <v-list-item-action>
+            <v-icon>mdi-account-cog</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Personal Settings</v-list-item-title>
+          </v-list-item-content> 
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-right color="blue-grey" dark>
+    <v-app-bar app clipped-left color="blue-grey" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Toolbar</v-toolbar-title>
+      <v-toolbar-title>Menu</v-toolbar-title>
       <v-spacer />
-      <v-app-bar-nav-icon @click.stop="drawerRight = !drawerRight" />
+      <v-toolbar-title>LvdH Employee Managment System</v-toolbar-title>
     </v-app-bar>
-
-    <v-navigation-drawer v-model="drawer" app>
-      <v-list dense>
-        <v-list-item @click.stop="left = !left">
-          <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Open Temporary Drawer</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-navigation-drawer v-model="left" fixed temporary />
 
     <v-content>
       <v-container class="fill-height" fluid>
         <v-row justify="center" align="center">
           <v-col class="shrink">
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn :href="source" icon large target="_blank" v-on="on">
-                  <v-icon large>mdi-code-tags</v-icon>
-                </v-btn>
-              </template>
-              <span>Source</span>
-            </v-tooltip>
-            <v-tooltip right>
-              <template v-slot:activator="{ on }">
-                <v-btn icon large href="https://codepen.io/johnjleider/pen/QewYYx" target="_blank" v-on="on">
-                  <v-icon large>mdi-codepen</v-icon>
-                </v-btn>
-              </template>
-              <span>Codepen</span>
-            </v-tooltip>
           </v-col>
         </v-row>
       </v-container>
     </v-content>
-
-    <v-navigation-drawer v-model="right" fixed right temporary />
 
     <v-footer app color="blue-grey" class="white--text">
       <span>{{ user.name }}</span>
@@ -73,14 +93,10 @@
 <script>
   export default {
     props: {
-      source: String,
       user: Object,
     },
     data: () => ({
       drawer: null,
-      drawerRight: null,
-      right: false,
-      left: false,
     }),
   }
 </script>

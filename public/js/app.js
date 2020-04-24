@@ -1980,17 +1980,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    source: String,
     user: Object
   },
   data: function data() {
     return {
-      drawer: null,
-      drawerRight: null,
-      right: false,
-      left: false
+      drawer: null
     };
   }
 });
@@ -37407,42 +37424,168 @@ var render = function() {
       _c(
         "v-navigation-drawer",
         {
-          attrs: { app: "", clipped: "", right: "" },
+          attrs: { app: "", clipped: "", left: "" },
           model: {
-            value: _vm.drawerRight,
+            value: _vm.drawer,
             callback: function($$v) {
-              _vm.drawerRight = $$v
+              _vm.drawer = $$v
             },
-            expression: "drawerRight"
+            expression: "drawer"
           }
         },
         [
           _c(
             "v-list",
-            { attrs: { dense: "" } },
+            { attrs: { dense: "", shaped: "" } },
             [
               _c(
-                "v-list-item",
+                "v-list-group",
                 {
-                  on: {
-                    click: function($event) {
-                      $event.stopPropagation()
-                      _vm.right = !_vm.right
+                  attrs: {
+                    "no-action": "",
+                    "prepend-icon": "mdi-account-circle",
+                    value: "true"
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function() {
+                        return [
+                          _c(
+                            "v-list-item-content",
+                            [_c("v-list-item-title", [_vm._v("Admin")])],
+                            1
+                          )
+                        ]
+                      },
+                      proxy: true
                     }
-                  }
+                  ])
                 },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item",
+                    { attrs: { link: "" } },
+                    [
+                      _c("v-list-item-title", [_vm._v("Liel")]),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item-icon",
+                        [_c("v-icon", [_vm._v("mdi-account")])],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
                 [
                   _c(
                     "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-exit-to-app")])],
+                    [_c("v-icon", [_vm._v("mdi-inbox")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-content",
+                    [_c("v-list-item-title", [_vm._v("Messages")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
+                [
+                  _c(
+                    "v-list-item-action",
+                    [_c("v-icon", [_vm._v("mdi-account-box-multiple")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-content",
+                    [_c("v-list-item-title", [_vm._v("Employees Manifest")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
+                [
+                  _c(
+                    "v-list-item-action",
+                    [_c("v-icon", [_vm._v("mdi-alert-circle")])],
                     1
                   ),
                   _vm._v(" "),
                   _c(
                     "v-list-item-content",
                     [
-                      _c("v-list-item-title", [_vm._v("Open Temporary Drawer")])
+                      _c("v-list-item-title", [_vm._v("Rules and Regulations")])
                     ],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
+                [
+                  _c(
+                    "v-list-item-action",
+                    [_c("v-icon", [_vm._v("mdi-clipboard-account-outline")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-content",
+                    [_c("v-list-item-title", [_vm._v("Human Resources")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
+                [
+                  _c(
+                    "v-list-item-action",
+                    [_c("v-icon", [_vm._v("mdi-file")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-content",
+                    [_c("v-list-item-title", [_vm._v("Additional Forms")])],
+                    1
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item",
+                [
+                  _c(
+                    "v-list-item-action",
+                    [_c("v-icon", [_vm._v("mdi-account-cog")])],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-content",
+                    [_c("v-list-item-title", [_vm._v("Personal Settings")])],
                     1
                   )
                 ],
@@ -37458,7 +37601,7 @@ var render = function() {
       _c(
         "v-app-bar",
         {
-          attrs: { app: "", "clipped-right": "", color: "blue-grey", dark: "" }
+          attrs: { app: "", "clipped-left": "", color: "blue-grey", dark: "" }
         },
         [
           _c("v-app-bar-nav-icon", {
@@ -37470,83 +37613,14 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("v-toolbar-title", [_vm._v("Toolbar")]),
+          _c("v-toolbar-title", [_vm._v("Menu")]),
           _vm._v(" "),
           _c("v-spacer"),
           _vm._v(" "),
-          _c("v-app-bar-nav-icon", {
-            on: {
-              click: function($event) {
-                $event.stopPropagation()
-                _vm.drawerRight = !_vm.drawerRight
-              }
-            }
-          })
+          _c("v-toolbar-title", [_vm._v("LvdH Employee Managment System")])
         ],
         1
       ),
-      _vm._v(" "),
-      _c(
-        "v-navigation-drawer",
-        {
-          attrs: { app: "" },
-          model: {
-            value: _vm.drawer,
-            callback: function($$v) {
-              _vm.drawer = $$v
-            },
-            expression: "drawer"
-          }
-        },
-        [
-          _c(
-            "v-list",
-            { attrs: { dense: "" } },
-            [
-              _c(
-                "v-list-item",
-                {
-                  on: {
-                    click: function($event) {
-                      $event.stopPropagation()
-                      _vm.left = !_vm.left
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-exit-to-app")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", [_vm._v("Open Temporary Drawer")])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("v-navigation-drawer", {
-        attrs: { fixed: "", temporary: "" },
-        model: {
-          value: _vm.left,
-          callback: function($$v) {
-            _vm.left = $$v
-          },
-          expression: "left"
-        }
-      }),
       _vm._v(" "),
       _c(
         "v-content",
@@ -37558,91 +37632,7 @@ var render = function() {
               _c(
                 "v-row",
                 { attrs: { justify: "center", align: "center" } },
-                [
-                  _c(
-                    "v-col",
-                    { staticClass: "shrink" },
-                    [
-                      _c(
-                        "v-tooltip",
-                        {
-                          attrs: { right: "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        attrs: {
-                                          href: _vm.source,
-                                          icon: "",
-                                          large: "",
-                                          target: "_blank"
-                                        }
-                                      },
-                                      on
-                                    ),
-                                    [
-                                      _c("v-icon", { attrs: { large: "" } }, [
-                                        _vm._v("mdi-code-tags")
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [_vm._v(" "), _c("span", [_vm._v("Source")])]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tooltip",
-                        {
-                          attrs: { right: "" },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-btn",
-                                    _vm._g(
-                                      {
-                                        attrs: {
-                                          icon: "",
-                                          large: "",
-                                          href:
-                                            "https://codepen.io/johnjleider/pen/QewYYx",
-                                          target: "_blank"
-                                        }
-                                      },
-                                      on
-                                    ),
-                                    [
-                                      _c("v-icon", { attrs: { large: "" } }, [
-                                        _vm._v("mdi-codepen")
-                                      ])
-                                    ],
-                                    1
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [_vm._v(" "), _c("span", [_vm._v("Codepen")])]
-                      )
-                    ],
-                    1
-                  )
-                ],
+                [_c("v-col", { staticClass: "shrink" })],
                 1
               )
             ],
@@ -37651,17 +37641,6 @@ var render = function() {
         ],
         1
       ),
-      _vm._v(" "),
-      _c("v-navigation-drawer", {
-        attrs: { fixed: "", right: "", temporary: "" },
-        model: {
-          value: _vm.right,
-          callback: function($$v) {
-            _vm.right = $$v
-          },
-          expression: "right"
-        }
-      }),
       _vm._v(" "),
       _c(
         "v-footer",
