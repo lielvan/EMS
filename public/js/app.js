@@ -1964,50 +1964,81 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     user: Object
   },
   data: function data() {
     return {
-      drawer: null
+      drawer: null,
+      testValue: 'TEST',
+      navigationItems: [{
+        text: 'Admin',
+        icon: 'mdi-account-circle',
+        isLink: false,
+        childItems: [{
+          text: 'Liel',
+          icon: 'mdi-account',
+          isLink: true
+        }]
+      }, {
+        text: 'Messages',
+        icon: 'mdi-mail',
+        isLink: false,
+        childItems: [{
+          text: 'Inbox',
+          icon: 'mdi-inbox',
+          isLink: true
+        }, {
+          text: 'Sent',
+          icon: 'mdi-send',
+          isLink: true
+        }, {
+          text: 'New Message',
+          icon: 'mdi-plus-box',
+          isLink: true
+        }]
+      }, {
+        text: 'Employees Manifest',
+        icon: 'mdi-account-box-multiple',
+        isLink: true,
+        parentItem: null
+      }, {
+        text: 'Rules and Regulations',
+        icon: 'mdi-alert-circle',
+        isLink: true,
+        parentItem: null
+      }, {
+        text: 'Human Resources',
+        icon: 'mdi-clipboard-account-outline',
+        isLink: false,
+        childItems: [{
+          text: 'Contact Manager',
+          icon: '',
+          isLink: true
+        }, {
+          text: 'Request Time Off',
+          icon: '',
+          isLink: true
+        }, {
+          text: 'Electronic Paycheck',
+          icon: '',
+          isLink: true
+        }, {
+          text: 'Forms',
+          icon: '',
+          isLink: true
+        }]
+      }, {
+        text: 'Additional Forms',
+        icon: 'mdi-file',
+        isLink: true,
+        parentItem: null
+      }, {
+        text: 'Personal Settings',
+        icon: 'mdi-account-cog',
+        isLink: true
+      }]
     };
   }
 });
@@ -37438,161 +37469,117 @@ var render = function() {
             "v-list",
             { attrs: { dense: "", shaped: "" } },
             [
-              _c(
-                "v-list-group",
-                {
-                  attrs: {
-                    "no-action": "",
-                    "prepend-icon": "mdi-account-circle",
-                    value: "true"
-                  },
-                  scopedSlots: _vm._u([
-                    {
-                      key: "activator",
-                      fn: function() {
-                        return [
+              _vm._l(_vm.navigationItems, function(item, index) {
+                return [
+                  item.childItems != null
+                    ? _c(
+                        "v-list-group",
+                        {
+                          key: index,
+                          attrs: { "no-action": "", "prepend-icon": item.icon },
+                          scopedSlots: _vm._u(
+                            [
+                              {
+                                key: "activator",
+                                fn: function() {
+                                  return [
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-title", {
+                                          domProps: {
+                                            textContent: _vm._s(item.text)
+                                          }
+                                        })
+                                      ],
+                                      1
+                                    )
+                                  ]
+                                },
+                                proxy: true
+                              }
+                            ],
+                            null,
+                            true
+                          )
+                        },
+                        [
+                          _vm._v(" "),
+                          _vm._l(item.childItems, function(childItem) {
+                            return _c(
+                              "v-list-item",
+                              {
+                                key: childItem.text,
+                                attrs: { link: "" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.testValue = childItem.text
+                                  }
+                                }
+                              },
+                              [
+                                _c("v-list-item-title", {
+                                  domProps: {
+                                    textContent: _vm._s(childItem.text)
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item-icon",
+                                  [
+                                    _c("v-icon", {
+                                      domProps: {
+                                        textContent: _vm._s(childItem.icon)
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          })
+                        ],
+                        2
+                      )
+                    : _c(
+                        "v-list-item",
+                        {
+                          key: index,
+                          attrs: { link: "" },
+                          on: {
+                            click: function($event) {
+                              _vm.testValue = item.text
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "v-list-item-action",
+                            [
+                              _c("v-icon", {
+                                domProps: { textContent: _vm._s(item.icon) }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
                           _c(
                             "v-list-item-content",
-                            [_c("v-list-item-title", [_vm._v("Admin")])],
+                            [
+                              _c("v-list-item-title", {
+                                domProps: { textContent: _vm._s(item.text) }
+                              })
+                            ],
                             1
                           )
-                        ]
-                      },
-                      proxy: true
-                    }
-                  ])
-                },
-                [
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item",
-                    { attrs: { link: "" } },
-                    [
-                      _c("v-list-item-title", [_vm._v("Liel")]),
-                      _vm._v(" "),
-                      _c(
-                        "v-list-item-icon",
-                        [_c("v-icon", [_vm._v("mdi-account")])],
+                        ],
                         1
                       )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-inbox")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [_c("v-list-item-title", [_vm._v("Messages")])],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-account-box-multiple")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [_c("v-list-item-title", [_vm._v("Employees Manifest")])],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-alert-circle")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", [_vm._v("Rules and Regulations")])
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-clipboard-account-outline")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [_c("v-list-item-title", [_vm._v("Human Resources")])],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-file")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [_c("v-list-item-title", [_vm._v("Additional Forms")])],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                [
-                  _c(
-                    "v-list-item-action",
-                    [_c("v-icon", [_vm._v("mdi-account-cog")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [_c("v-list-item-title", [_vm._v("Personal Settings")])],
-                    1
-                  )
-                ],
-                1
-              )
+                ]
+              })
             ],
-            1
+            2
           )
         ],
         1
@@ -37632,7 +37619,13 @@ var render = function() {
               _c(
                 "v-row",
                 { attrs: { justify: "center", align: "center" } },
-                [_c("v-col", { staticClass: "shrink" })],
+                [
+                  _c("v-col", { staticClass: "shrink" }, [
+                    _vm._v(
+                      "\n          " + _vm._s(_vm.testValue) + "\n        "
+                    )
+                  ])
+                ],
                 1
               )
             ],
